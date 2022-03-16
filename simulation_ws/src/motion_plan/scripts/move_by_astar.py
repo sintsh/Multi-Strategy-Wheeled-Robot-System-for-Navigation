@@ -85,7 +85,7 @@ def main():
     y = float(y_value[str(in_y)])
 
 
-    r = rospy.Rate(20)
+    r = rospy.Rate(6)
 
     desired_position_ = Point()
 
@@ -112,76 +112,69 @@ def main():
 
     dist_precision_ = 0.6
 
+    
     is_orention_corrected = False
 
-    while not rospy.is_shutdown():
-        
+    while path:
+        removed = path.pop()
+        local_x = removed[0]
+        local_y = removed[1]
 
-        
-
-        
+        while not rospy.is_shutdown():
             
-        
-            # inc_x =  float(x_value[str(desired_position_.x)])- float(x_value[str(math.ceil(x))])
-            # inc_y = float(y_value[str(desired_position_.y)])- float(y_value[str(math.ceil(y))])
-            
+                inc_x =  float(x_value[str(desired_position_.x)])- x
+                inc_y = float(y_value[str(desired_position_.y)])- y
 
-            inc_x =  float(x_value[str(desired_position_.x)])- x
-            inc_y = float(y_value[str(desired_position_.y)])- y
+                angle_to_goal= atan2(inc_y, inc_x)
 
-            angle_to_goal= atan2(inc_y, inc_x)
-
-            print("x goal %f" , x)
-            print("y goal %f" , y)
-            
-
-            print("x  ceil goal %f" , float(x_value[str(math.ceil(x))]))
-            print("y goal %f" , float(y_value[str(desired_position_.y)]))
-
-            if abs(angle_to_goal - theta) > 0.1:
-                speed.linear.x = 0.0
-                speed.angular.z = 0.3
-                print("Oranation is performed theta:%f", abs(angle_to_goal - theta) )
-            else:
-                if  path:
-                    removed = path.pop()
-                    local_x = removed[0]
-                    local_y = removed[1]
-
-                print("Poped [%s]",removed)
-                # x = float(x_value[str(in_x)])
-                # y = float(y_value[str(in_y)])
-
-                # is_orention_corrected = True
-                print("Move forward %f", theta)
+                print("x goal %f" , x)
+                print("y goal %f" , y)
                 
-            
-                desired_yaw = math.atan2(inc_y, inc_x)
-                err_yaw = desired_yaw - theta
-                err_pos = math.sqrt(pow(inc_y, 2) + pow(inc_x, 2))
-            
 
-                if err_pos > dist_precision_:
-                    speed.linear.x =x_value[str(math.ceil(local_x))]/10+0.002
-                    print ('X Value: [%s]' % speed.linear.x)
-                    speed.linear.y =y_value[str(math.ceil(local_y))]/10+0.002
-                    speed.angular.z = 0.0
-                    print(path)
+                print("x  ceil goal %f" , float(x_value[str(math.ceil(x))]))
+                print("y goal %f" , float(y_value[str(desired_position_.y)]))
 
-                else:
-                    print ('Position error: [%s]' % err_pos)
+                if abs(angle_to_goal - theta) > 0.1 and not is_orention_corrected:
                     speed.linear.x = 0.0
-                    speed.linear.y = 0.0
-                    speed.angular.z = 0.0
+                    speed.angular.z = 0.3
+                    print("Oranation is performed theta:%f", abs(angle_to_goal - theta) )
+                else:
+                    
+
+                    print("Poped [%s]",removed)
+                    # x = float(x_value[str(in_x)])
+                    # y = float(y_value[str(in_y)])
+
+                    is_orention_corrected = True
+                    print("Move forward %f", theta)
+                    
+                
+                    desired_yaw = math.atan2(inc_y, inc_x)
+                    err_yaw = desired_yaw - theta
+                    err_pos = math.sqrt(pow(inc_y, 2) + pow(inc_x, 2))
+                
+
+                    if err_pos > dist_precision_:
+                        speed.linear.x =x_value[str(math.ceil(local_x))]/10
+                        print ('X Value: [%s]' % speed.linear.x)
+                        speed.linear.y =y_value[str(math.ceil(local_y))]/10
+                        speed.angular.z = 0.0
+                        print(path)
+
+                    else:
+                        print ('Position error: [%s]' % err_pos)
+                        speed.linear.x = 0.0
+                        speed.linear.y = 0.0
+                        speed.angular.z = 0.0
 
 
-            
+                
 
-                desired_position_.x =local_x
-                desired_position_.y =local_y
+                    # desired_position_.x =local_x
+                    # desired_position_.y =local_y
 
-            pub.publish(speed)
-            r.sleep()
+                pub.publish(speed)
+                r.sleep()
 
 if __name__ == '__main__':
     main()
