@@ -1,0 +1,2 @@
+m2wr_description:motion_plan:my_worlds
+-DCATKIN_DEVEL_PREFIX=/home/sintsh/simulation_ws/devel -DCMAKE_INSTALL_PREFIX=/home/sintsh/simulation_ws/install -G Unix Makefiles
