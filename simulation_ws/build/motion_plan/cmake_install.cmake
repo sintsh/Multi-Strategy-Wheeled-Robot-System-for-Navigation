@@ -1,8 +1,8 @@
-# Install script for directory: /home/sintsh/simulation_ws/src/motion_plan
+# Install script for directory: /home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/src/motion_plan
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/sintsh/simulation_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sintsh/simulation_ws/build/motion_plan/catkin_generated/installspace/motion_plan.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/build/motion_plan/catkin_generated/installspace/motion_plan.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motion_plan/cmake" TYPE FILE FILES
-    "/home/sintsh/simulation_ws/build/motion_plan/catkin_generated/installspace/motion_planConfig.cmake"
-    "/home/sintsh/simulation_ws/build/motion_plan/catkin_generated/installspace/motion_planConfig-version.cmake"
+    "/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/build/motion_plan/catkin_generated/installspace/motion_planConfig.cmake"
+    "/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/build/motion_plan/catkin_generated/installspace/motion_planConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motion_plan" TYPE FILE FILES "/home/sintsh/simulation_ws/src/motion_plan/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motion_plan" TYPE FILE FILES "/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/src/motion_plan/package.xml")
 endif()
 

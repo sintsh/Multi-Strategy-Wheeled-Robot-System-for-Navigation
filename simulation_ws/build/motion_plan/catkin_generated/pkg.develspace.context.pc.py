@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "motion_plan"
-PROJECT_SPACE_DIR = "/home/sintsh/simulation_ws/devel"
+PROJECT_SPACE_DIR = "/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/devel"
 PROJECT_VERSION = "0.0.0"

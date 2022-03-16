@@ -1,4 +1,4 @@
-prefix=/home/sintsh/simulation_ws/devel
+prefix=/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/devel
 
 Name: my_worlds
 Description: Description of my_worlds

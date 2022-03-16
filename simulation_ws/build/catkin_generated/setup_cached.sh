@@ -7,9 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/sintsh/simulation_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/sintsh/simulation_ws/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/sintsh/simulation_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD='/home/sintsh/simulation_ws/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/sintsh/simulation_ws/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/sintsh/simulation_ws/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/src:$ROS_PACKAGE_PATH"

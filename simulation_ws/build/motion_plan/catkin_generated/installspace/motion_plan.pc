@@ -1,4 +1,4 @@
-prefix=/home/sintsh/simulation_ws/install
+prefix=/home/sintsh/Multi-Strategy-Wheeled-Robot-System-for-Navigation/simulation_ws/install
 
 Name: motion_plan
 Description: Description of motion_plan
