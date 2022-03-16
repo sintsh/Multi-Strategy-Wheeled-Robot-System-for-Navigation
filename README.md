@@ -38,7 +38,7 @@ roslaunch my_worlds world2.launch
 
 ## To run scripts
 
-To move car from one point to another , open terminal and got simulation_ws
+To move car from one point to another , open terminal and go to simulation_ws
 ```
 source devel/setup.bash
 ```
@@ -46,14 +46,14 @@ source devel/setup.bash
 ```
 rosrun motion_plan go_to_point.py
 ```
-To check a car detects an obstacle , open terminal and got simulation_ws
+To check a car detects an obstacle , open terminal and go to simulation_ws
 
 
 ```
 rosrun motion_plan obstacle_avoidance.py
 ```
 
-To move car from one point to another using A* algorithm , open terminal and got simulation_ws
+To move car from one point to another using A* algorithm , open terminal and go to simulation_ws
 
 
 ```
