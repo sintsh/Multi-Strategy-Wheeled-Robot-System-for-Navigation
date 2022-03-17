@@ -87,6 +87,8 @@ def main():
 
     r = rospy.Rate(6)
 
+    # Goal point
+
     desired_position_ = Point()
 
     desired_position_.x = 3
